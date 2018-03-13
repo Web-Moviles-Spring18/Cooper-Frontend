@@ -11,3 +11,9 @@
 > * Compile Typescript files into JS, run `webpack -wd`
 > * In another console window Run server `http-server`
 
+##### Important Documentation based on
+- [ReactBootstrap](https://react-bootstrap.github.io/getting-started/introduction).
+- [ReactRouter] (https://reacttraining.com/react-router/web/api/BrowserRouter).
+- [Bootstrap v3.3] (https://getbootstrap.com/docs/3.3/).
+- [ReactJs] (https://reactjs.org/).
+- [Typescript] (https://www.typescriptlang.org/docs/handbook/basic-types.html).
