@@ -1,5 +1,3 @@
-# Omit compile Js from Typescript
-dist/*
 
 # Omit node_modules
 node_modules/*

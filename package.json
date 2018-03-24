@@ -1,38 +1,48 @@
 {
-  "name": "cooper",
+  "name": "cooper-frontend",
   "version": "1.0.0",
-  "description": "FrontEnd for Cooper App",
+  "description": "CliendSide App for Cooper",
   "main": "index.js",
   "scripts": {
+    "start": "webpack-dev-server --config ./webpack.config.js --mode production",
+    "dev": "webpack-dev-server --config ./webpack.config.js --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Web-Moviles-Spring18/Cooper-Frontend.git"
   },
-  "author": "itesm.mx",
+  "keywords": [
+    "cooper-webapp"
+  ],
+  "author": "marco ney rodrigo ney danielj",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Web-Moviles-Spring18/Cooper-Frontend/issues"
   },
   "homepage": "https://github.com/Web-Moviles-Spring18/Cooper-Frontend#readme",
-  "dependencies": {
-    "@types/react": "^16.0.36",
-    "@types/react-bootstrap": "^0.32.6",
-    "@types/react-dom": "^16.0.3",
-    "@types/react-redux": "^5.0.15",
-    "@types/react-router": "^4.0.22",
-    "@types/react-router-dom": "^4.2.4",
-    "react": "^16.2.0",
-    "react-bootstrap": "^0.32.1",
-    "react-dom": "^16.2.0",
-    "react-redux": "^5.0.7",
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2"
+  "babel": {
+    "presets": [
+      "env",
+      "react",
+      "stage-2"
+    ]
   },
   "devDependencies": {
-    "awesome-typescript-loader": "^3.4.1",
-    "source-map-loader": "^0.2.3",
-    "typescript": "^2.7.1"
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "react-hot-loader": "^4.0.0",
+    "webpack": "^4.2.0",
+    "webpack-cli": "^2.0.13",
+    "webpack-dev-server": "^3.1.1"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "redux": "^3.7.2"
   }
 }
