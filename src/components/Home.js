@@ -1,8 +1,13 @@
 
 import React, {Component} from 'react';
+import Menu from "./Menu";
 
 export default class App extends Component {
     render () {
-        return <p>This is my new react app</p>
+        return (
+            <div>
+                <Menu />
+            </div>
+        );
     }
 }
