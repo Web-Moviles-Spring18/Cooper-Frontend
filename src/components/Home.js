@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 import Menu from "./Menu";
 
-export default class App extends Component {
+export default class Home extends Component {
     render () {
         return (
             <div>
