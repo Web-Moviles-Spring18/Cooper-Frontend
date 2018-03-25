@@ -1,29 +1,45 @@
 
 import React, {Component} from 'react';
-import {Nav, Navbar, NavItem} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-export default class App extends Component {
+export default class Menu extends Component {
+    constructor(props) {
+        super(props);
+    }
+    optionActive(option) {
+        if(this.props.optionSelected == option) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     render () {
         return (
-            <Navbar inverse collapseOnSelect>
-                <Navbar.Header>
-                    <Navbar.Brand>
-                    <Link to="/">Cooper</Link>
-                    </Navbar.Brand>
-                    <Navbar.Toggle />
-                </Navbar.Header>
-                <Navbar.Collapse>
-                    <Nav pullRight>
-                    <NavItem eventKey={1} componentClass={Link} href="/Login" to="/Login">
-                        Sign In
-                    </NavItem>
-                    <NavItem eventKey={2}>
-                        Sign Up
-                    </NavItem>
-                    </Nav>
-                </Navbar.Collapse>
-            </Navbar>
+            <nav className="navbar is-fixed-top is-info" role="navigation" aria-label="main navigation">
+                <div className="navbar-brand">
+                    <Link className="navbar-item" to="/">
+                        <img src="cooper-icon.png" alt="Bulma: a modern CSS framework based on Flexbox" width="30" height="40" />
+                        <div className="title">&nbsp;Cooper</div>
+                    </Link>
+
+                    <div className="navbar-burger">
+                        <span>SignIn</span>
+                        <span>SignUp</span>
+                        <span></span>
+                    </div>
+                </div>
+                <div className="navbar-end" >
+                    <div className="navbar-item title is-6">
+                        <Link to="/SignIn" className={"navbar-item control " + (this.optionActive("signin") ? "is-active":"")}>
+                            Sign In
+                        </Link>
+                        <Link to="/SignUp" className={"navbar-item control " + (this.optionActive("signup") ? "is-active":"")}>
+                            Sign Up
+                        </Link>
+                    </div>
+                </div>
+            </nav>
         );
     }
 }
+

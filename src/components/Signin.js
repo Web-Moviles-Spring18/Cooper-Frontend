@@ -5,55 +5,49 @@ import Menu from "./Menu";
 import Icon_awesome from "react-fontawesome";
 
 export default class Login extends Component {
-    /*<i className="fa fa-facebook visible-xs"></i>-->*/
+    /*<i classNameNameName="fa fa-facebook visible-xs"></i>-->*/
     render () {
         return (
             <div>
-                <Menu />
-                <div className="container">
-                <div className="omb_login">
-                    <h3 className="omb_authTitle">Login or <a href="#">Sign up</a></h3>
-                    <div className="row omb_row-sm-offset-3 omb_socialButtons">
-                        <div className="col-xs-3 col-sm-3">
-                            <a href="#" className="btn btn-lg btn-block omb_btn-facebook">
-                            <i className="fa fa-facebook"></i>
-                                <span>&nbsp;Facebook</span>
-                            </a>
-                        </div>	
-                        <div className="col-xs-3 col-sm-3">
-                            <a href="#" className="btn btn-lg btn-block omb_btn-google">
-                                <i className="fa fa-google-plus"></i>
-                                <span>&nbsp;Google</span>
-                            </a>
-                        </div>	
-                    </div>
-                    <div className="row omb_row-sm-offset-3 omb_loginOr">
-                        <div className="col-xs-12 col-sm-6">
-                            <hr className="omb_hrOr" />
-                            <span className="omb_spanOr">or</span>
-                        </div>
-                    </div>
-                    <div className="row omb_row-sm-offset-3">
-                        <div className="col-xs-12 col-sm-6">	
-                            <form className="omb_loginForm" action="">
-                                <div className="input-group">
-                                    <span className="input-group-addon"><i className="fa fa-user"></i></span>
-                                    <input type="text" className="form-control" name="username" placeholder="email address" />
+                <Menu optionSelected="signin" />
+                <section className="hero is-fullheight">
+                    <div className="hero-body">
+                    <div className="container has-text-centered">
+                        <div className="column is-half">
+                            <h3 className="title has-text-grey">Sign In</h3>
+                            <p className="subtitle has-text-grey">Please login to proceed.</p>
+                            <div className="box">
+                                <div className="field">
+                                    <div className="control">
+                                    <input className="input is-medium" type="email" placeholder="Your Email" autofocus="" />
+                                    </div>
                                 </div>
-                                <span className="help-block"></span>
-                                                    
-                                <div className="input-group">
-                                    <span className="input-group-addon"><i className="fa fa-lock"></i></span>
-                                    <input  type="password" className="form-control" name="password" placeholder="Password" />
-                                </div>
-                                <span className="help-block">Password error</span>
 
-                                <button className="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-                            </form>
+                                <div className="field">
+                                    <div className="control">
+                                    <input className="input is-medium" type="password" placeholder="Your Password" />
+                                    </div>
+                                </div>
+                                <div className="field">
+                                    <label className="checkbox">
+                                    <input type="checkbox" />
+                                    &nbsp;Remember me
+                                    </label>
+                                </div>
+                                <button className="button is-block is-info is-large is-fullwidth">Login</button>
+                            </div>
+                            <p className="has-text-grey">
+                                <a href="../">Sign Up</a> &nbsp;·&nbsp;
+                                <a href="../">Forgot Password</a> &nbsp;·&nbsp;
+                                <a href="../">Need Help?</a>
+                            </p>
+                            </div>
                         </div>
-                    </div>           
-                </div>
-            </div>
+                        <div className="column is-one-quarter">
+                            <button className="button is-success">Test</button>
+                        </div>
+                    </div>
+                </section>
             </div>
         );
     }
