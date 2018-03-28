@@ -1,4 +1,5 @@
-const webpack = require('webpack')
+const webpack = require('webpack');
+const path = require("path");
 module.exports = {
     entry: [
         'react-hot-loader/patch',
@@ -25,6 +26,10 @@ module.exports = {
       new webpack.HotModuleReplacementPlugin()
     ],
     devServer: {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": "true"
+      },
       contentBase: './dist',
       hot: true, 
       port: 8080,
