@@ -48,7 +48,7 @@ export default class Home extends Component {
                 <div className="title">
                   How does it work?
                   </div>
-                  <div className="subtitle">3 steps and done</div>
+                  <div className="subtitle">3 easy steps</div>
               </div>
             </div>
             <div className="container is-fluid">
