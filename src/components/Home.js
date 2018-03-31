@@ -7,7 +7,9 @@ export default class Home extends Component {
     return (
       <div>
         <Menu types="home" />
-
+        <figure className="image">
+          <img src="https://i.imgur.com/4aNl36l.jpg"></img>
+        </figure>
         <section className="section">
           {/* About */}
           <section className="hero is-medium is-bold">
@@ -44,11 +46,11 @@ export default class Home extends Component {
           {/* How-To */}
           <section className="hero is-medium is-bold">
             <div className="section">
-            <div className="content has-text-centered">
+              <div className="content has-text-centered">
                 <div className="title">
                   How does it work?
                   </div>
-                  <div className="subtitle">3 easy steps</div>
+                <div className="subtitle">3 easy steps</div>
               </div>
             </div>
             <div className="container is-fluid">
@@ -96,7 +98,7 @@ export default class Home extends Component {
                 <div className="title">
                   Meet our partners
                   </div>
-                  <div className="subtitle">Get special offers from our partners!</div>
+                <div className="subtitle">Get special offers from our partners!</div>
               </div>
             </div>
             <div className="container is-fluid">
