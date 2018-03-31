@@ -8,7 +8,7 @@ export default class Home extends Component {
       <div>
         <Menu types="home" />
         <figure className="image">
-          <img src="https://i.imgur.com/4aNl36l.jpg"></img>
+          <img src="https://i.imgur.com/QLArF2F.jpg"></img>
         </figure>
         <section className="section">
           {/* About */}
