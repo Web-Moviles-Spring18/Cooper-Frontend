@@ -1,5 +1,5 @@
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 export default class Menu extends Component {
@@ -7,40 +7,40 @@ export default class Menu extends Component {
         super(props);
     }
     optionActive(option) {
-        if(this.props.optionSelected == option) {
+        if (this.props.optionSelected == option) {
             return true;
         } else {
             return false;
         }
     }
     navbarType(type) {
-        if(type == 'app') {
+        if (type == 'app') {
             return (
-                    <div className="navbar-item title is-6" >
-                        <Link to="/SignIn" className={"navbar-item control " + (this.optionActive("signin") ? "is-active":"")}>
-                            Options
+                <div className="navbar-item title is-6" >
+                    <Link to="/SignIn" className={"navbar-item control " + (this.optionActive("signin") ? "is-active" : "")}>
+                        Options
                         </Link>
-                        <Link to="/SignUp" className={"navbar-item control " + (this.optionActive("signup") ? "is-active":"")}>
-                            Sign Out
+                    <Link to="/SignUp" className={"navbar-item control " + (this.optionActive("signup") ? "is-active" : "")}>
+                        Sign Out
                         </Link>
-                    </div>
+                </div>
             );
-        } else if(type == 'home') {
+        } else if (type == 'home') {
             return (
-                    <div className="navbar-item title is-6">
-                        <Link to="/SignIn" className={"navbar-item control " + (this.optionActive("signin") ? "is-active":"")}>
-                            Sign In
+                <div className="navbar-item title is-6">
+                    <Link to="/SignIn" className={"navbar-item control " + (this.optionActive("signin") ? "is-active" : "")}>
+                        Sign In
                         </Link>
-                        <Link to="/SignUp" className={"navbar-item control " + (this.optionActive("signup") ? "is-active":"")}>
-                            Sign Up
+                    <Link to="/SignUp" className={"navbar-item control " + (this.optionActive("signup") ? "is-active" : "")}>
+                        Sign Up
                         </Link>
-                    </div>
+                </div>
             );
         }
     }
-    render () {
+    render() {
         return (
-            <nav className="nav navbar is-fixed-top is-info" role="navigation" aria-label="main navigation">
+            <nav className="nav navbar is-fixed-top" role="navigation" aria-label="main navigation">
                 <div className="navbar-brand">
                     <Link className="navbar-item" to="/">
                         <img src="/cooper-icon.png" alt="" width="30" height="40" />
