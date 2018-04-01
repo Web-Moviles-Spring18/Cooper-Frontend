@@ -31,7 +31,7 @@ export default class Menu extends Component {
                     <Link to="/SignIn" className={"navbar-item control " + (this.optionActive("signin") ? "is-active" : "")}>
                         Sign In
                         </Link>
-                    <Link to="/SignUp" className={"navbar-item control " + (this.optionActive("signup") ? "is-active" : "")}>
+                    <Link to="/SignUp" className={"navbar-item control button is-success " + (this.optionActive("signup") ? "is-active" : "")}>
                         Sign Up
                         </Link>
                 </div>
