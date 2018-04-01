@@ -40,7 +40,7 @@ export default class Menu extends Component {
     }
     render() {
         return (
-            <nav className="nav navbar is-fixed-top" role="navigation" aria-label="main navigation">
+            <nav className="nav navbar is-fixed-top has-shadow" role="navigation" aria-label="main navigation">
                 <div className="navbar-brand">
                     <Link className="navbar-item" to="/">
                         <img src="/cooper-icon.png" alt="" width="30" height="40" />
