@@ -44,7 +44,7 @@ export default class Home extends Component {
                     <div className="level">
                       <div className="level-item">
                         <Link to="/SignUp">
-                          <a className="button is-success">Sign Up</a>
+                          <div className="button is-success">Sign Up</div>
                         </Link>
                       </div>
                     </div>
@@ -156,9 +156,9 @@ export default class Home extends Component {
             </div>
           </section>
         </section>
-        <footer class="footer">
-          <div class="container">
-            <div class="content has-text-centered">
+        <footer className="footer">
+          <div className="container">
+            <div className="content has-text-centered">
               <p>
                 <strong>Cooper</strong> by Cooper S.A. de C.V.
               </p>
