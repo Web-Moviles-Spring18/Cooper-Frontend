@@ -23,14 +23,23 @@ export default class Home extends Component {
             <div className="container is-fluid">
               <div className="columns">
                 {/* Hero Body */}
-                <div className="column is-6">
+                <div className="column is-6 is-vcentered">
                   <div className="content">
-                    <h2 className="">
-                      Cooper is the best way to <strong>share and collect</strong> money from friends and family!
+                    <h2 className="has-text-centered">
+                      Cooper is the best way to
+                       <br></br>
+                      <strong>share and collect</strong>
+                      <br></br>
+                      money from friends and family!
 
                       </h2>
+                    <br></br>
                     <p>Wether you're spliting the check for a pizza, the movies or even a weekend trip,
-                    with Cooper you can send out a request for any amount and get rid of all the hassles.</p>
+                    with Cooper you can send out a request for any amount and get rid of all the hassles.
+                    Manage who's paid and how much from your phone or computer.
+                    </p>
+                    <br></br>
+                    <h6 className="has-text-centered">Get started now!</h6>
                     <div className="level">
                       <div className="level-item">
                         <a className="button is-success">Sign Up</a>
@@ -40,8 +49,8 @@ export default class Home extends Component {
                 </div>
                 {/* Hero Image */}
                 <div className="column is-6">
-                  <figure className="image is-2by1">
-                    <img src="https://bulma.io/images/placeholders/640x320.png"></img>
+                  <figure className="image is-3by1">
+                    <img src="https://i.imgur.com/Q8s8H0V.png"></img>
                   </figure>
                 </div>
               </div>
