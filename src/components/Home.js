@@ -15,9 +15,9 @@ export default class Home extends Component {
           <section className="hero is-medium is-bold">
             <div className="section">
               <div className="content">
-                <h1 className="title has-text-centered">
+                <div className="title has-text-centered">
                   What is Cooper?
-                  </h1>
+                  </div>
               </div>
             </div>
             <div className="container is-fluid">
@@ -29,8 +29,13 @@ export default class Home extends Component {
                       Cooper is the best way to <strong>share and collect</strong> money from friends and family!
 
                       </h2>
-                    <p>Wether you're spliting the check for a pizza, the the movies or even a weekend trip,
+                    <p>Wether you're spliting the check for a pizza, the movies or even a weekend trip,
                     with Cooper you can send out a request for any amount and get rid of all the hassles.</p>
+                    <div className="level">
+                      <div className="level-item">
+                        <a className="button is-success">Sign Up</a>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 {/* Hero Image */}
