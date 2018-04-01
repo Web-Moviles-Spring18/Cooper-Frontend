@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import Menu from "./Menu";
+import { Link } from 'react-router-dom';
 
 export default class Home extends Component {
   render() {
@@ -42,7 +43,9 @@ export default class Home extends Component {
                     <h6 className="has-text-centered">Get started now!</h6>
                     <div className="level">
                       <div className="level-item">
-                        <a className="button is-success">Sign Up</a>
+                        <Link to="/SignUp">
+                          <a className="button is-success">Sign Up</a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -58,47 +61,49 @@ export default class Home extends Component {
           </section>
 
           {/* How-To */}
-          <section className="hero is-medium is-bold">
-            <div className="section">
-              <div className="content has-text-centered">
-                <div className="title">
-                  How does it work?
+          <section className="hero is-small is-bold">
+            <div className="hero-body">
+              <div className="section">
+                <div className="content has-text-centered">
+                  <div className="title">
+                    How does it work?
                   </div>
-                <div className="subtitle">3 easy steps</div>
+                  <div className="subtitle">3 easy steps</div>
+                </div>
               </div>
-            </div>
-            <div className="container is-fluid">
-              <div className="columns has-text-centered">
-                {/* Hero Image */}
-                <div className="column is-4">
-                  <figure className="image is-2by1">
-                    <img src="https://i.imgur.com/V5iBDSZ.png"></img>
-                  </figure>
-                  <div className="content">
-                    <h4 className="">
-                      Create a request
+              <div className="container is-fluid">
+                <div className="columns has-text-centered">
+                  {/* Hero Image */}
+                  <div className="column is-4">
+                    <figure className="image is-2by1">
+                      <img src="https://i.imgur.com/V5iBDSZ.png"></img>
+                    </figure>
+                    <div className="content">
+                      <h4 className="">
+                        Create a request
                       </h4>
+                    </div>
                   </div>
-                </div>
-                {/* Hero Body */}
-                <div className="column is-4">
-                  <figure className="image is-2by1">
-                    <img src="https://i.imgur.com/qtZHFHE.png"></img>
-                  </figure>
-                  <div className="content">
-                    <h4 className="">
-                      Send request to your friends
+                  {/* Hero Body */}
+                  <div className="column is-4">
+                    <figure className="image is-2by1">
+                      <img src="https://i.imgur.com/qtZHFHE.png"></img>
+                    </figure>
+                    <div className="content">
+                      <h4 className="">
+                        Send request to your friends
                       </h4>
+                    </div>
                   </div>
-                </div>
-                <div className="column is-4">
-                  <figure className="image is-2by1">
-                    <img src="https://i.imgur.com/h33PBYv.png"></img>
-                  </figure>
-                  <div className="content">
-                    <h4 className="">
-                      Split it up and have fun!
+                  <div className="column is-4">
+                    <figure className="image is-2by1">
+                      <img src="https://i.imgur.com/h33PBYv.png"></img>
+                    </figure>
+                    <div className="content">
+                      <h4 className="">
+                        Split it up and have fun!
                       </h4>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -106,44 +111,46 @@ export default class Home extends Component {
           </section>
 
           {/* Partners */}
-          <section className="hero is-medium is-bold">
-            <div className="section">
-              <div className="content has-text-centered">
-                <div className="title">
-                  Meet our partners
+          <section className="hero is-small is-bold">
+            <div className="hero-body">
+              <div className="section">
+                <div className="content has-text-centered">
+                  <div className="title">
+                    Meet our partners
                   </div>
-                <div className="subtitle">Get special offers from our partners!</div>
+                  <div className="subtitle">Get <strong>special offers</strong> from our partners!</div>
+                </div>
               </div>
-            </div>
-            <div className="container is-fluid">
-              <div className="columns">
-                {/* Partner 1 */}
-                <div className="column is-3">
+              <div className="container is-fluid">
+                <div className="columns">
+                  {/* Partner 1 */}
+                  <div className="column is-3">
 
-                  <figure className="image is-2by1">
-                    <img src="https://i.imgur.com/V7Eii3R.png"></img>
-                  </figure>
-                </div>
-                {/* Partner 1 */}
-                <div className="column is-3">
+                    <figure className="image is-2by1">
+                      <img src="https://i.imgur.com/V7Eii3R.png"></img>
+                    </figure>
+                  </div>
+                  {/* Partner 1 */}
+                  <div className="column is-3">
 
-                  <figure className="image is-2by1">
-                    <img src="https://i.imgur.com/jcGXtit.png"></img>
-                  </figure>
-                </div>
-                {/* Partner 1 */}
-                <div className="column is-3">
+                    <figure className="image is-2by1">
+                      <img src="https://i.imgur.com/jcGXtit.png"></img>
+                    </figure>
+                  </div>
+                  {/* Partner 1 */}
+                  <div className="column is-3">
 
-                  <figure className="image is-2by1">
-                    <img src="https://i.imgur.com/owZTRsI.png"></img>
-                  </figure>
-                </div>
-                {/* Partner 1 */}
-                <div className="column is-3">
-                  <figure className="image is-2by1">
-                    <img src="https://i.imgur.com/jBD0j8n.png"></img>
-                  </figure>
+                    <figure className="image is-2by1">
+                      <img src="https://i.imgur.com/owZTRsI.png"></img>
+                    </figure>
+                  </div>
+                  {/* Partner 1 */}
+                  <div className="column is-3">
+                    <figure className="image is-2by1">
+                      <img src="https://i.imgur.com/jBD0j8n.png"></img>
+                    </figure>
 
+                  </div>
                 </div>
               </div>
             </div>
