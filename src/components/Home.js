@@ -68,11 +68,11 @@ export default class Home extends Component {
               </div>
             </div>
             <div className="container is-fluid">
-              <div className="columns">
+              <div className="columns has-text-centered">
                 {/* Hero Image */}
                 <div className="column is-4">
                   <figure className="image is-2by1">
-                    <img src="https://bulma.io/images/placeholders/640x320.png"></img>
+                    <img src="https://i.imgur.com/V5iBDSZ.png"></img>
                   </figure>
                   <div className="content">
                     <h4 className="">
@@ -83,7 +83,7 @@ export default class Home extends Component {
                 {/* Hero Body */}
                 <div className="column is-4">
                   <figure className="image is-2by1">
-                    <img src="https://bulma.io/images/placeholders/640x320.png"></img>
+                    <img src="https://i.imgur.com/qtZHFHE.png"></img>
                   </figure>
                   <div className="content">
                     <h4 className="">
@@ -93,11 +93,11 @@ export default class Home extends Component {
                 </div>
                 <div className="column is-4">
                   <figure className="image is-2by1">
-                    <img src="https://bulma.io/images/placeholders/640x320.png"></img>
+                    <img src="https://i.imgur.com/h33PBYv.png"></img>
                   </figure>
                   <div className="content">
                     <h4 className="">
-                      Split it up!
+                      Split it up and have fun!
                       </h4>
                   </div>
                 </div>
@@ -149,6 +149,15 @@ export default class Home extends Component {
             </div>
           </section>
         </section>
+        <footer class="footer">
+          <div class="container">
+            <div class="content has-text-centered">
+              <p>
+                <strong>Cooper</strong> by Cooper S.A. de C.V.
+              </p>
+            </div>
+          </div>
+        </footer>
       </div >
     );
   }
