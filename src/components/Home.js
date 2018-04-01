@@ -121,27 +121,27 @@ export default class Home extends Component {
                 <div className="column is-3">
 
                   <figure className="image is-2by1">
-                    <img src="https://bulma.io/images/placeholders/640x320.png"></img>
+                    <img src="https://i.imgur.com/V7Eii3R.png"></img>
                   </figure>
                 </div>
                 {/* Partner 1 */}
                 <div className="column is-3">
 
                   <figure className="image is-2by1">
-                    <img src="https://bulma.io/images/placeholders/640x320.png"></img>
+                    <img src="https://i.imgur.com/jcGXtit.png"></img>
                   </figure>
                 </div>
                 {/* Partner 1 */}
                 <div className="column is-3">
 
                   <figure className="image is-2by1">
-                    <img src="https://bulma.io/images/placeholders/640x320.png"></img>
+                    <img src="https://i.imgur.com/owZTRsI.png"></img>
                   </figure>
                 </div>
                 {/* Partner 1 */}
                 <div className="column is-3">
                   <figure className="image is-2by1">
-                    <img src="https://bulma.io/images/placeholders/640x320.png"></img>
+                    <img src="https://i.imgur.com/jBD0j8n.png"></img>
                   </figure>
 
                 </div>
