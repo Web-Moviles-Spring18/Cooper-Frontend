@@ -27,8 +27,8 @@
   .loginBtn:active {
 	box-shadow: inset 0 0 0 32px rgba(0,0,0,0.1);
   }
-  
-  
+
+
   /* Facebook */
   .loginBtn--facebook {
 	background-color: #4C69BA;
@@ -45,8 +45,8 @@
 	background-color: #5B7BD5;
 	background-image: linear-gradient(#5B7BD5, #4864B1);
   }
-  
-  
+
+
   /* Google */
   .loginBtn--google {
 	/*font-family: "Roboto", Roboto, arial, sans-serif;*/
@@ -60,3 +60,26 @@
   .loginBtn--google:focus {
 	background: #E74B37;
   }
+
+	.SearchBar {
+	width: 300px;
+	height: 24px;
+	}
+
+	.textBox {
+	width: 500px;
+	height: 24px;
+	}
+
+	.Checkbox {
+	width: 30px;
+	height: 30px;
+	}
+	.SubmitButton {
+	width: 530px;
+	height: 50px;
+	}
+	.EditButton {
+	width: 490px;
+	height: 50px;
+	}
