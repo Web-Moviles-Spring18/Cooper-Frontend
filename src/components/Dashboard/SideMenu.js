@@ -5,37 +5,27 @@ export default class SideMenu extends Component {
     render() {
         return (
             <nav className="menu">
-                <p className="menu-label">
-                    General
-                </p>
+                <p className="menu-label">General</p>
                 <ul className="menu-list">
-                <li><a className="is-active">Pools</a></li>
-                <li><a>Customers</a></li>
+                    <li>
+                        <a className="is-active">Coops</a>
+                        <ul>
+                        <li><a>Create</a></li>
+                        <li><a>List</a></li>
+                        <li><a>Join</a></li>
+                        </ul>
+                    </li>
                 </ul>
-                <p className="menu-label">
-                Administration
-                </p>
+                <p className="menu-label">Account</p>
                 <ul className="menu-list">
-                <li><a>Team Settings</a></li>
                 <li>
-                    <a className="">Manage Your Team</a>
+                    <a className="">Profile</a>
                     <ul>
-                    <li><a>Members</a></li>
-                    <li><a>Plugins</a></li>
-                    <li><a>Add a member</a></li>
+                        <li><a>See</a></li>
+                        <li><a>Detail</a></li>
+                        <li><a>Sign Out</a></li>
                     </ul>
                 </li>
-                <li><a>Invitations</a></li>
-                <li><a>Cloud Storage Environment Settings</a></li>
-                <li><a>Authentication</a></li>
-                </ul>
-                <p className="menu-label">
-                Transactions
-                </p>
-                <ul className="menu-list">
-                <li><a>Payments</a></li>
-                <li><a>Transfers</a></li>
-                <li><a>Balance</a></li>
                 </ul>
             </nav>
         );
