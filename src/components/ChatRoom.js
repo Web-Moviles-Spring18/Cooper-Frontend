@@ -28,6 +28,7 @@ class ChatRoom extends Component {
     componentDidMount() {
         firebase.database().ref('1/').on('value', snap => {
             const currentMessages = snap.val();
+			console.log(currentMessages);
             currentMessages;
             if(currentMessages !== null) {
                 this.setState ({
@@ -40,14 +41,14 @@ class ChatRoom extends Component {
     add(text, author) {
         let timeStamp = new Date().toLocaleString();
         const newMessage = {
-            id: this.state.messages.length,
+            index: "" + this.state.messages.length,
             message: text,
             author: author,
             time: timeStamp,
             userid: "rodremur"
         };
-        window.firebase.database().ref(`1/${newMessage.id}`)
-            .set(newMessage);
+        let currentRef = window.firebase.database().ref(`1/`);
+		currentRef.push().set(newMessage);
         /*this.setState(prevState => ({
             messages: [
                 ...prevState.messages,
@@ -67,9 +68,10 @@ class ChatRoom extends Component {
     }
 
     eachMessage(message, i) {
+		let currentMessage = this.state.messages[message];
         return (
-            <Message key={i} index={i} author={message.author} time={message.time}>
-                {message.message}
+            <Message key={i} index={i} author={currentMessage.author} time={currentMessage.time}>
+                {currentMessage.message}
             </Message>
         );
     }
@@ -89,7 +91,7 @@ class ChatRoom extends Component {
                 <br/>
                 <div className="level">
                     <div id="chat-messages" className="container">
-                        {this.state.messages.map(this.eachMessage)}
+                        {Object.keys(this.state.messages).map(this.eachMessage)}
                     </div>
                 </div>
 
