@@ -26,8 +26,9 @@ class ChatRoom extends Component {
     }
 
     componentDidMount() {
-        firebase.database().ref('messages/').on('value', snap => {
+        firebase.database().ref('1/').on('value', snap => {
             const currentMessages = snap.val();
+            currentMessages;
             if(currentMessages !== null) {
                 this.setState ({
                     messages: currentMessages
@@ -42,9 +43,10 @@ class ChatRoom extends Component {
             id: this.state.messages.length,
             message: text,
             author: author,
-            time: timeStamp
+            time: timeStamp,
+            userid: "rodremur"
         };
-        window.firebase.database().ref(`messages/${newMessage.id}`)
+        window.firebase.database().ref(`1/${newMessage.id}`)
             .set(newMessage);
         /*this.setState(prevState => ({
             messages: [
@@ -100,7 +102,7 @@ class ChatRoom extends Component {
                                     placeholder="Type your message." onChange={this.update.bind(this)}/>
                             </p>
                             <p className="control">
-                                <a className="button is-info" onClick={this.add.bind(this, this.state.currentText, "John Cook")}>
+                                <a className="button is-info" onClick={this.add.bind(this, this.state.currentText, "Rodrigo Reyes")}>
                                     <span className="icon"><i className="fas fa-paper-plane"></i></span>
                                 </a>
                             </p>
