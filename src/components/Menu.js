@@ -17,12 +17,7 @@ export default class Menu extends Component {
         if (type == 'app') {
             return (
                 <div className="navbar-item title is-6" >
-                    <Link to="/SignIn" className={"navbar-item control " + (this.optionActive("signin") ? "is-active" : "")}>
-                        Options
-                        </Link>
-                    <Link to="/SignUp" className={"navbar-item control " + (this.optionActive("signup") ? "is-active" : "")}>
-                        Sign Out
-                        </Link>
+                    &nbsp;
                 </div>
             );
         } else if (type == 'home') {

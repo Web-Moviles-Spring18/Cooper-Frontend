@@ -15,7 +15,7 @@ export default class Main extends Component{
                 <div className="section">
                 <div className="columns">
                     <aside className="column is-2">
-                        <SideMenu />
+                        <SideMenu option="invite"/>
                     </aside>
                     <main className="column">
                         <div className="level">
