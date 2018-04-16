@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 
 export default class SideMenu extends Component {
     
@@ -8,11 +9,11 @@ export default class SideMenu extends Component {
                 <p className="menu-label">General</p>
                 <ul className="menu-list">
                     <li>
-                        <a className="is-active">Coops</a>
+                        <Link to="/app" className="is-active">Coops</Link>
                         <ul>
-                        <li><a>Create</a></li>
-                        <li><a>List</a></li>
-                        <li><a>Join</a></li>
+                            <li><Link to="/EditPool">Create</Link></li>
+                            <li><a>List</a></li>
+                            <li><Link to="/Invite">Join</Link></li>
                         </ul>
                     </li>
                 </ul>
