@@ -4,7 +4,7 @@ import Menu from "../Menu";
 import SideMenu from "./SideMenu";
 import CoopCard from "./CoopCard";
 
-export default class JoinToPool extends React.Component {
+export default class ListCoop extends React.Component {
 
     multipleCoops() {
         const arrCoops = [{"name":"PartyPizza", "imageUrl":"https://placehold.it/1280x720", "total":1549.50, "members":6},
@@ -12,7 +12,7 @@ export default class JoinToPool extends React.Component {
                           {"name":"Clean Code", "imageUrl":"https://placehold.it/1280x720", "total":680, "members":12}];
         return arrCoops.map(coop => 
             <div className="column is-3">
-                <CoopCard type="join" name={coop.name} imageURL={coop.imageUrl} total={coop.total} members={coop.members}/>
+                <CoopCard name={coop.name} imageURL={coop.imageUrl} total={coop.total} members={coop.members}/>
             </div>
             
         );
@@ -24,7 +24,7 @@ export default class JoinToPool extends React.Component {
                 <div className="section">
                     <div className="columns">
                         <aside className="column is-2">
-                            <SideMenu option="join"/>
+                            <SideMenu option="list"/>
                         </aside>
                         <main className="column">
                             <div className="level">
