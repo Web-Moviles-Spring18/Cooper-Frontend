@@ -21,7 +21,7 @@ export default class Main extends Component{
                         <div className="level">
                             <div className="level-left">
                             <div className="level-item">
-                                <div className="title">Invite to pool</div>
+                                <div className="title">Coops to Join</div>
                             </div>
                             </div>
                         </div>

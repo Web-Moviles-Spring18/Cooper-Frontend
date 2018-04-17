@@ -26,7 +26,7 @@ export default class SideMenu extends Component {
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/Coop/Invite" className={this.props.option == 'invite' ? "is-active" : ""}>
+                                <Link to="/Coop/Join" className={this.props.option == 'invite' ? "is-active" : ""}>
                                 <i class="fas fa-link"></i>
                                     &nbsp;Join
                                 </Link>

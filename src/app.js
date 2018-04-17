@@ -7,6 +7,7 @@ import Home from './components/Home';
 import Login from './components/Signin';
 import Dashboard from "./components/Dashboard/Main";
 import InviteToPool from "./components/Dashboard/InviteToPool";
+import JoinToPool from "./components/Dashboard/JointToPool";
 import CreatePool from "./components/Dashboard/CreatePool";
 import EditPoolDetail from "./components/Dashboard/EditPoolDetail.js";
 import ChatRoomPage from "./components/Dashboard/ChatRoomPage.js";
@@ -21,6 +22,7 @@ class App extends Component {
                 <Route exact path="/App" component={ Dashboard } />
                 <Route exact path="/Coop/Create" component={ CreatePool } />
                 <Route exact path="/Coop/Invite" component={ InviteToPool } />
+                <Route exact path="/Coop/Join" component={ JoinToPool } />
                 <Route exact path="/Coop/Edit" component={ EditPoolDetail } />
                 
             </Switch>
