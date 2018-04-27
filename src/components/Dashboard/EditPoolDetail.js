@@ -64,7 +64,7 @@ export default class Main extends Component{
                                   <div className="level-item">
                                     <div>
                                       <form>
-                                        <button class="EditButton">Save</button>
+                                        <button className="EditButton">Save</button>
                                       </form>
                                     </div>
                                   </div>

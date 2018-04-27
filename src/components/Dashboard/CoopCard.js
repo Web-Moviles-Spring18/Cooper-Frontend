@@ -18,10 +18,10 @@ export default class CoopCard extends React.Component {
                 </div>
                 <div className="panel-block">
                     <div className="column is-8">
-                        <div className="title is-5"><i class="far fa-money-bill-alt"></i> ${this.props.total}</div>
+                        <div className="title is-6"><i className="far fa-money-bill-alt"></i> ${this.props.total}</div>
                     </div>
                     <div className="column is-4">
-                        <div className="title is-5"><i class="fas fa-user-circle"></i> x {this.props.members}</div>
+                        <div className="title is-6"><i className="fas fa-user-circle"></i> x {this.props.members}</div>
                     </div>
                 </div>
                 <div className="panel-block">

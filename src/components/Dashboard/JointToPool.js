@@ -48,12 +48,12 @@ export default class JoinToPool extends React.Component {
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="field has-addons">
-                                        <div class="control is-expanded">
-                                            <input class="input" type="text" placeholder="Find a Coop" />
+                                    <div className="field has-addons">
+                                        <div className="control is-expanded">
+                                            <input className="input" type="text" placeholder="Find a Coop" />
                                         </div>
-                                        <div class="control">
-                                            <a class="button is-info">
+                                        <div className="control">
+                                            <a className="button is-info">
                                             Search
                                             </a>
                                         </div>

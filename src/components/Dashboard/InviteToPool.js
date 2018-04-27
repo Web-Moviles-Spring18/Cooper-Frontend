@@ -39,7 +39,7 @@ export default class Main extends Component{
                             </div>
                             <div>
                               <form >
-                                <button class="SubmitButton">Invite</button>
+                                <button className="SubmitButton">Invite</button>
                               </form>
                             </div>
                             </div>

@@ -15,19 +15,19 @@ export default class SideMenu extends Component {
                         <ul>
                             <li>
                                 <Link to="/Coop/Create" className={this.props.option == 'create' ? "is-active" : ""}>
-                                    <i class="fas fa-plus"></i>
+                                    <i className="fas fa-plus"></i>
                                     &nbsp;Create
                                 </Link>
                             </li>
                             <li>
                                 <Link to="/Coop/List" className={this.props.option == 'list' ? "is-active" : ""}>
-                                    <i class="fas fa-list-ul"></i>
+                                    <i className="fas fa-list-ul"></i>
                                     &nbsp;List
                                 </Link>
                             </li>
                             <li>
                                 <Link to="/Coop/Join" className={this.props.option == 'join' ? "is-active" : ""}>
-                                <i class="fas fa-link"></i>
+                                <i className="fas fa-link"></i>
                                     &nbsp;Join
                                 </Link>
                             </li>
@@ -40,12 +40,12 @@ export default class SideMenu extends Component {
                     <a className="">Profile</a>
                     <ul>
                         <li>
-                            <a><i class="fas fa-edit"></i>
+                            <a><i className="fas fa-edit"></i>
                                 &nbsp;Edit
                             </a>
                         </li>
                         <li>
-                            <a><i class="fas fa-sign-in-alt"></i>
+                            <a><i className="fas fa-sign-in-alt"></i>
                                 &nbsp;Sign Out
                             </a>
                         </li>
