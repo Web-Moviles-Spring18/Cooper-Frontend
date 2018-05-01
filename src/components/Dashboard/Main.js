@@ -2,10 +2,26 @@ import React, {Component} from "react";
 
 import Menu from "../Menu";
 import SideMenu from "./SideMenu";
+import createCORSRequest from "../../request";
 
 export default class Main extends Component{
     constructor(props) {
         super(props);
+    }
+
+    componentDidMount() {
+        var url = "http://localhost:3000/account";
+        var xhr = createCORSRequest('GET', url);
+        if (!xhr) {
+            throw new Error('CORS not supported');
+        }
+        xhr.withCredentials = true;
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+                console.log(xhr);
+            }
+        }
+        xhr.send(null);
     }
 
     render() {

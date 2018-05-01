@@ -4,6 +4,7 @@ import { Router } from 'react-router-dom';
 import Menu from "./Menu";
 import axios from "axios";
 import url from "../config";
+import createCORSRequest from "../request";
 
 export default class Login extends Component {
     constructor(props) {
@@ -28,14 +29,29 @@ export default class Login extends Component {
                 "Access-Control-Allow-Origin" : '*'
             }*/
         }
-        axios.post("https://cooperapp.me/login", data, config)
-            .then(res => {
-                alert(res.data);
+        var url = "http://localhost:3000/login";
+        var xhr = createCORSRequest('POST', url);
+        if (!xhr) {
+            throw new Error('CORS not supported');
+        }
+        xhr.withCredentials = true;
+        xhr.setRequestHeader("Content-type", "application/json");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+                console.log(xhr);
                 this.props.history.push("/app");
-            })
-            .catch(error => {
-                alert(error.data);
-            })
+            }
+        }
+        xhr.send(JSON.stringify(data));
+        // axios.post("http://localhost:3000/login", data, config)
+        //     .then(res => {
+        //         console.log(res);
+        //         console.log(res.data);
+        //         this.props.history.push("/app");
+        //     })
+        //     .catch(error => {
+        //         alert(error.data);
+        //     })
     }
 
     updateLoginUsername(evt) {
