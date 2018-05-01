@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import { Route, Switch, BrowserRouter, browserHistory} from 'react-router-dom';
-import {Provider} from 'react-redux';
-import store from './store/index';
+//import {Provider} from 'react-redux';
+//import store from './store/index';
 
 import Home from './components/Home';
 import Login from './components/Signin';
@@ -13,6 +13,7 @@ import JoinToPool from "./components/Dashboard/JointToPool";
 import CreatePool from "./components/Dashboard/CreatePool";
 import EditPoolDetail from "./components/Dashboard/EditPoolDetail.js";
 import ChatRoomPage from "./components/Dashboard/ChatRoomPage.js";
+import CoopDetail from './components/Dashboard/CoopDetail';
 
 class App extends Component {
     //<!--<Route exact path="/ChatRoom" component={ ChatRoomPage } />--> <Provider store={store} >
@@ -24,7 +25,9 @@ class App extends Component {
                     <Route exact path="/SignIn" component={ Login } />
                     <Route exact path="/App" component={ Dashboard } />
                     <Route exact path="/Coop/Create" component={ CreatePool } />
-                    <Route exact path="/Coop/List" component={ ListPools } />
+                    <Route exact path="/Coop/List" component={ ListPools } >
+                        <Route exact path="/Coop/List/:coopid" component={ CoopDetail } />
+                    </Route>
                     <Route exact path="/Coop/Join" component={ JoinToPool } />
                     <Route exact path="/Coop/Edit" component={ EditPoolDetail } />
                 </Switch>

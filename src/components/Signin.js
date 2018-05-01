@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import { Router } from 'react-router-dom';
 import Menu from "./Menu";
 import axios from "axios";
-import url from "../config";
+import url from "../url";
 
 export default class Login extends Component {
     constructor(props) {
@@ -22,19 +22,20 @@ export default class Login extends Component {
         }
         let config = {
             "Content-Type" : "application/json",
-            //withCredentials: true,
+            withCredentials: true,
             /*headers: {
                 'Access-Control-Allow-Credentials' : true,
                 "Access-Control-Allow-Origin" : '*'
             }*/
         }
-        axios.post("https://cooperapp.me/login", data, config)
+        console.log(url.url);
+        axios.post(url.url + "/login", data, config)
             .then(res => {
                 alert(res.data);
                 this.props.history.push("/app");
             })
             .catch(error => {
-                alert(error.data);
+                alert(error);
             })
     }
 
