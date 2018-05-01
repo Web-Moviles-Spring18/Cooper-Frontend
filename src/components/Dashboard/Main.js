@@ -3,25 +3,45 @@ import React, {Component} from "react";
 import Menu from "../Menu";
 import SideMenu from "./SideMenu";
 import createCORSRequest from "../../request";
+import axios from "axios";
 
 export default class Main extends Component{
     constructor(props) {
         super(props);
     }
 
-    componentDidMount() {
+    getAccount() {
+        console.log("Sending GET Accounts request");
         var url = "http://localhost:3000/account";
-        var xhr = createCORSRequest('GET', url);
+        var xhr = createCORSRequest("GET", url);
         if (!xhr) {
             throw new Error('CORS not supported');
         }
         xhr.withCredentials = true;
         xhr.onreadystatechange = function () {
             if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+                console.log("Request Done");
+                console.log(xhr);
+            } else if (xhr.readyState == XMLHttpRequest.DONE) {
+                console.log("Failed Request");
                 console.log(xhr);
             }
         }.bind(this);
         xhr.send(null);
+    }
+
+    getAccountAxios() {
+        config = {
+            "withCredentials": true,
+        }
+        axios.get("http://localhost:3000/account", config)
+            .then(res => {
+                console.log(res);
+                console.log(res.data);
+            })
+            .catch(error => {
+                alert(error.data);
+            })
     }
 
     render() {
@@ -42,8 +62,8 @@ export default class Main extends Component{
                             </div>
                             <div className="level-right">
                             <div className="level-item">
-                                <button type="button" className="button is-small">
-                                    {new Date().toLocaleString()}
+                                <button type="button" className="button is-small" onClick={evt => this.getAccountAxios(evt)}>
+                                    Get Account
                                 </button>
                             </div>
                             </div>

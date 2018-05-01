@@ -23,13 +23,13 @@ export default class Login extends Component {
         }
         let config = {
             "Content-Type" : "application/json",
-            //withCredentials: true,
+            "withCredentials" : true,
             /*headers: {
                 'Access-Control-Allow-Credentials' : true,
                 "Access-Control-Allow-Origin" : '*'
             }*/
         }
-        var url = "http://localhost:3000/login";
+/*         var url = "http://localhost:3000/login";
         var xhr = createCORSRequest('POST', url);
         if (!xhr) {
             throw new Error('CORS not supported');
@@ -42,16 +42,16 @@ export default class Login extends Component {
                 this.props.history.push("/app");
             }
         }.bind(this);
-        xhr.send(JSON.stringify(data));
-        // axios.post("http://localhost:3000/login", data, config)
-        //     .then(res => {
-        //         console.log(res);
-        //         console.log(res.data);
-        //         this.props.history.push("/app");
-        //     })
-        //     .catch(error => {
-        //         alert(error.data);
-        //     })
+        xhr.send(JSON.stringify(data)); */
+        axios.post("http://localhost:3000/login", data, config)
+            .then(res => {
+                console.log(res);
+                console.log(res.data);
+                this.props.history.push("/app");
+            })
+            .catch(error => {
+                alert(error.data);
+            })
     }
 
     updateLoginUsername(evt) {
