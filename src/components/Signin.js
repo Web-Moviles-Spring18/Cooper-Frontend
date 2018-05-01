@@ -41,7 +41,7 @@ export default class Login extends Component {
                 console.log(xhr);
                 this.props.history.push("/app");
             }
-        }
+        }.bind(this);
         xhr.send(JSON.stringify(data));
         // axios.post("http://localhost:3000/login", data, config)
         //     .then(res => {

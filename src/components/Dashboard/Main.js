@@ -20,7 +20,7 @@ export default class Main extends Component{
             if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
                 console.log(xhr);
             }
-        }
+        }.bind(this);
         xhr.send(null);
     }
 
