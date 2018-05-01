@@ -25,11 +25,11 @@ class App extends Component {
                     <Route exact path="/SignIn" component={ Login } />
                     <Route exact path="/App" component={ Dashboard } />
                     <Route exact path="/Coop/Create" component={ CreatePool } />
-                    <Route exact path="/Coop/List" component={ ListPools } >
-                        <Route exact path="/Coop/List/:coopid" component={ CoopDetail } />
-                    </Route>
+                    <Route exact path="/Coop/List" component={ ListPools } />
+                    <Route exact path="/Coop/List/:coopId" component={ CoopDetail } />
                     <Route exact path="/Coop/Join" component={ JoinToPool } />
                     <Route exact path="/Coop/Edit" component={ EditPoolDetail } />
+                    <Route exact path="/Coop/Invite/:coopId" component={ InviteToPool } />
                 </Switch>
            
         )

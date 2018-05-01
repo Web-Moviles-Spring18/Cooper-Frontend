@@ -19,7 +19,7 @@ export default class JoinToPool extends React.Component {
         }
     }
     componentWillMount() {
-        axios.get(url.url + "/profile/pools/invites")
+        axios.get(url.url + "/profile/pools/invites", {withCredentials:true})
             .then(res => {
                 this.setState({coopsToJoin:res.data});
             })
@@ -27,7 +27,7 @@ export default class JoinToPool extends React.Component {
     }
 
     searchCoops() {
-        axios.get(url.url + "/pool/search/"+this.state.searchPoolName)
+        axios.get(url.url + "/pool/search/"+this.state.searchPoolName, {withCredentials:true})
             .then(res => {
                 this.setState({coopsSearch:res.data})
             })
@@ -37,12 +37,21 @@ export default class JoinToPool extends React.Component {
         const arrCoops = [{"name":"PartyPizza", "imageUrl":"https://placehold.it/1280x720", "total":1549.50, "members":6},
                           {"name":"Coming Tonights", "imageUrl":"https://placehold.it/1280x720" , "total":2560.30, "members":5},
                           {"name":"Clean Code", "imageUrl":"https://placehold.it/1280x720", "total":680, "members":12}];
-        return this.state.coopsToJoin.map(coop => 
-            <div className="column is-6">
-                <CoopCard type="join" name={coop.node.name} imageURL={coop.node.image} total={coop.node.total} />
-            </div>
-            
-        );
+        if(this.state.coopsSearch.length > 0) {
+            return this.state.coopsToJoin.map(coop => 
+                <div className="column is-6">
+                    <CoopCard type="join" name={coop.name} imageURL={coop.picture} total={coop.total} payment={coop.paymentMethod}/>
+                </div>
+                
+            );
+        } else {
+            return (<div className="column is-6">
+                        <div className="box ">
+                            <div className="title is-4 has-text-danger">No Coops to Join!</div>
+                        </div>
+                    </div>);
+        }
+        
     }
     
     listCoopsSearch() {
@@ -51,7 +60,7 @@ export default class JoinToPool extends React.Component {
                           {"name":"Clean Code", "imageUrl":"https://placehold.it/1280x720", "total":680, "members":12}];
         return this.state.coopsSearch.map(coop => 
             <div className="column is-6">
-                <CoopCard type="join" name={coop.node.name} imageURL={coop.node.image} total={coop.node.total} />
+                <CoopCard type="join" name={coop.name} imageURL={coop.picture} total={coop.total} payment={coop.paymentMethod}/>
             </div>
             
         );
@@ -97,9 +106,9 @@ export default class JoinToPool extends React.Component {
                                             Search
                                             </a>
                                         </div>
-                                        <div className="columns is-multiline">
+                                    </div>
+                                    <div className="columns is-multiline">
                                             { this.listCoopsSearch() }
-                                        </div>
                                     </div>
                                 </div>
                             </div>

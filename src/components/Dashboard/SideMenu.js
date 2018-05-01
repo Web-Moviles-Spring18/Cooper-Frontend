@@ -1,9 +1,23 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Router } from 'react-router-dom';
+
+import axios from "axios";
+import url from "../../url";
 
 export default class SideMenu extends Component {
     constructor (props) {
         super(props);
+    }
+
+    logout() {
+        axios.get(url.url+"/logout", {withCredentials:true})
+            .then(res => {
+                alert(res.data);
+                window.location.replace("/")
+            })
+            .catch(error => {
+                alert(error);
+            })
     }
     render() {
         return (
@@ -45,7 +59,7 @@ export default class SideMenu extends Component {
                             </a>
                         </li>
                         <li>
-                            <a><i className="fas fa-sign-in-alt"></i>
+                            <a onClick={evt => this.logout(evt)}><i className="fas fa-sign-in-alt"></i>
                                 &nbsp;Sign Out
                             </a>
                         </li>

@@ -31,7 +31,7 @@ export default class CoopCard extends React.Component {
                     </div>
                 </div>
                 <div className="panel-block">
-                    <Link to={`/Coop/List/`+this.props.coopId} component={CoopDetail} className="button is-success is-fullwidth">
+                    <Link to={"/Coop/List/"+this.state.coopId} className="button is-success is-fullwidth">
                         {this.props.type == "join" ? "Join" : "See"}
                     </Link>
                 </div>
