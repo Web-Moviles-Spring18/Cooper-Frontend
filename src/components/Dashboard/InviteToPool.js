@@ -19,12 +19,15 @@ class Member extends React.Component {
     }
 
     sendInvitation() {
+      "/pool/63/invite"
+      console.log(url.url+"/pool/"+this.props.coopId+"/invite")
       axios.post(url.url+"/pool/"+this.props.coopId+"/invite", {"email":this.props.memberEmail}, {withCredentials: true})
         .then(res => {
             alert(res.data);
         })
         .catch(error => {
-          alert(error);
+          console.log(error.response);
+          alert(error.response.data);
         })
     }
 
