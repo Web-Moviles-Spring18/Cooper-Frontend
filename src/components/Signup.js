@@ -27,12 +27,14 @@ export default class Login extends Component {
         }
         let config = {
             "Content-Type" : "application/json",
-            withCredentials: true,
-            /*headers: {
-                'Access-Control-Allow-Credentials' : true,
-                "Access-Control-Allow-Origin" : '*'
-            }*/
+            withCredentials: true
         }
+        axios.post(url.url+"/signup", data, config)
+            .then(res => {
+                alert(res.data);
+                this.props.history.push("/Coop/List");
+            })
+            
         console.log(data);
     }
 

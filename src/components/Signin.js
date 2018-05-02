@@ -32,7 +32,7 @@ export default class Login extends Component {
         axios.post(url.url + "/login", data, config)
             .then(res => {
                 alert(res.data);
-                this.props.history.push("/app");
+                this.props.history.push("/Coop/List");
             })
             .catch(error => {
                 alert(error);
