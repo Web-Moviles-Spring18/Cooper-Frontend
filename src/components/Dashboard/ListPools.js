@@ -11,7 +11,8 @@ export default class ListCoop extends React.Component {
         super(props);
 
         this.state = {
-            coops : []
+            coops : [],
+            ownerCoops : []
         };
     }
 
@@ -25,6 +26,27 @@ export default class ListCoop extends React.Component {
             .catch(error => {
                 console.log(error);
             })
+
+        axios.get(url.url+"/profile/own/pools", config)
+            .then(res => {
+                let ownPools = res.data;
+                let ownership = [];
+                for(var i=0; i<ownPools.length; i++) {
+                    var poolid = ownPools[i].node._id;
+                    ownership.push(poolid);
+                }
+
+                this.setState({ownerCoops:ownership});
+
+                /*this.setState({coops : res.data});
+                console.log(JSON.stringify(res.data));*/
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+    isOwner(poolId) {
+        return (this.state.ownerCoops.indexOf(poolId) != -1)
     }
     multipleCoops() {
         const arrCoops = [{"name":"PartyPizza", "imageUrl":"https://placehold.it/1280x720", "total":1549.50, "members":6},
@@ -32,7 +54,7 @@ export default class ListCoop extends React.Component {
                           {"name":"Clean Code", "imageUrl":"https://placehold.it/1280x720", "total":680, "members":12}];
         return this.state.coops.map((coop, index) => 
             <div className="column is-3" key={index}>
-                <CoopCard coopId={coop.node._id} name={coop.node.name} imageURL={coop.node.picture} total={coop.node.total} members={coop.members} payment={coop.node.paymentMethod}/>
+                <CoopCard owner={this.isOwner(coop.node._id)} coopId={coop.node._id} name={coop.node.name} imageURL={coop.node.picture} total={coop.node.total} members={coop.members} payment={coop.node.paymentMethod}/>
             </div>
             
         );
@@ -50,7 +72,7 @@ export default class ListCoop extends React.Component {
                             <div className="level">
                                 <div className="level-left">
                                 <div className="level-item">
-                                    <div className="title">Coops to Join</div>
+                                    <div className="title">Coops</div>
                                 </div>
                                 </div>
                             </div>
