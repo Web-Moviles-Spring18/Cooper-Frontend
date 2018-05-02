@@ -6,6 +6,7 @@ import { Route, Switch, BrowserRouter, browserHistory} from 'react-router-dom';
 
 import Home from './components/Home';
 import Login from './components/Signin';
+import SignUp from './components/Signup';
 import Dashboard from "./components/Dashboard/Main";
 import InviteToPool from "./components/Dashboard/InviteToPool";
 import ListPools from "./components/Dashboard/ListPools";
@@ -23,6 +24,7 @@ class App extends Component {
                 <Switch>
                     <Route exact path="/" component={ Home } />
                     <Route exact path="/SignIn" component={ Login } />
+                    <Route exact path="/SignUp" component={SignUp}/>
                     <Route exact path="/App" component={ Dashboard } />
                     <Route exact path="/Coop/Create" component={ CreatePool } />
                     <Route exact path="/Coop/List" component={ ListPools } />
