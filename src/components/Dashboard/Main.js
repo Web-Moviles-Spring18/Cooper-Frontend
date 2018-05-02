@@ -15,19 +15,19 @@ export default class Main extends Component{
                 <div className="section">
                 <div className="columns">
                     <aside className="column is-2">
-                        <SideMenu />
+                        <SideMenu option="coops"/>
                     </aside>                    
                     <main className="column">
                         <div className="level">
                             <div className="level-left">
                             <div className="level-item">
-                                <div className="title">Dashboard</div>
+                                <div className="title">Coops</div>
                             </div>
                             </div>
                             <div className="level-right">
                             <div className="level-item">
                                 <button type="button" className="button is-small">
-                                March 8, 2017 - April 6, 2017
+                                    {new Date().toLocaleString()}
                                 </button>
                             </div>
                             </div>

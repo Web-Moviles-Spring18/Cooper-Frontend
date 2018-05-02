@@ -15,7 +15,7 @@ export default class Main extends Component{
                 <div className="section">
                 <div className="columns">
                     <aside className="column is-2">
-                        <SideMenu />
+                        <SideMenu option="edit"/>
                     </aside>
                     <main className="column">
                         <div className="level">
@@ -64,7 +64,7 @@ export default class Main extends Component{
                                   <div className="level-item">
                                     <div>
                                       <form>
-                                        <button class="EditButton">Save</button>
+                                        <button className="EditButton">Save</button>
                                       </form>
                                     </div>
                                   </div>

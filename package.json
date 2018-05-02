@@ -6,6 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.js --mode production",
     "dev": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "webpack" : "webpack -wd",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -35,7 +36,11 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "moment": "^2.22.1",
     "react-hot-loader": "^4.0.0",
+    "redux-thunk": "^2.2.0",
+    "style-loader": "^0.20.3",
     "webpack": "^4.2.0",
     "webpack-browser-plugin": "^1.0.20",
     "webpack-cli": "^2.0.13",
@@ -44,6 +49,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "react": "^16.2.0",
+    "react-datepicker": "^1.4.1",
     "react-dom": "^16.2.0",
     "react-icons": "^2.2.7",
     "react-redux": "^5.0.7",

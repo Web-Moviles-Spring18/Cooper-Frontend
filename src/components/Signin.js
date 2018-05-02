@@ -1,8 +1,9 @@
 
 import React, {Component} from 'react';
+import { Router } from 'react-router-dom';
 import Menu from "./Menu";
 import axios from "axios";
-
+import url from "../url";
 
 export default class Login extends Component {
     constructor(props) {
@@ -20,11 +21,18 @@ export default class Login extends Component {
             "password" : this.state.password
         }
         let config = {
-            "Content-Type" : "application/json"
+            "Content-Type" : "application/json",
+            withCredentials: true,
+            /*headers: {
+                'Access-Control-Allow-Credentials' : true,
+                "Access-Control-Allow-Origin" : '*'
+            }*/
         }
-        axios.post("http://localhost:3000/login", data, config)
+        console.log(url.url);
+        axios.post(url.url + "/login", data, config)
             .then(res => {
                 alert(res.data);
+                this.props.history.push("/app");
             })
             .catch(error => {
                 alert(error);
@@ -94,6 +102,7 @@ export default class Login extends Component {
                                     <a href="../">Need Help?</a>
                                 </p>
                         </div>
+                        
                     </div>
                 </section>
             </div>
