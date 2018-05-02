@@ -98,7 +98,7 @@ export default class Login extends Component {
                                     <div className="field">
                                         <label className="checkbox">
                                         <input type="checkbox" />
-                                         &nbsp; I agree to the <a href="#">terms and conditions</a>
+                                         &nbsp; I agree with the <a href="https://cooperapp.me/privacypolicy.htm">terms and conditions</a>
                                         </label>
                                     </div>
                                     <button className="button is-block is-info is-large is-fullwidth" onClick={evt => this.signup(evt)}>Signup</button>
