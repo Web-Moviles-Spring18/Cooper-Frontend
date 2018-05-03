@@ -11,8 +11,8 @@ addons:
 branches:
   only:
   - master
-  - Development
-  - Testing
+  - Develop
+  - travis
 env:
   global:
   - REMOTE_APP_DIR=/var/www/cooper-front/
@@ -37,4 +37,6 @@ deploy:
   provider: script
   script: bash scripts/deploy.sh
   on:
-    branch: master
+    branch:
+    - master
+    - travis
