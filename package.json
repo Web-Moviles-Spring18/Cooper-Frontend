@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.js --mode production",
     "dev": "webpack-dev-server --config ./webpack.config.js --mode development",
-    "webpack" : "webpack -wd",
+    "webpack": "webpack -wd",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -41,10 +41,10 @@
     "react-hot-loader": "^4.0.0",
     "redux-thunk": "^2.2.0",
     "style-loader": "^0.20.3",
-    "webpack": "^4.2.0",
+    "webpack": "^4.6.0",
     "webpack-browser-plugin": "^1.0.20",
-    "webpack-cli": "^2.0.13",
-    "webpack-dev-server": "^3.1.1"
+    "webpack-cli": "^2.1.2",
+    "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
     "axios": "^0.18.0",
