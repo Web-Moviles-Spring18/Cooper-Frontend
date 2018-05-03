@@ -28,7 +28,7 @@ install:
 before_script:
 - chmod 600 deploy && mv deploy ~/.ssh/id_rsa
 script:
-- npm run webpack
+- npm run build
 deploy:
   skip_cleanup: true
   provider: script
