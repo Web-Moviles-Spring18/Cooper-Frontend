@@ -83,3 +83,19 @@
 	width: 490px;
 	height: 50px;
 	}
+
+	.is-rounded-container {
+		display: inline-block;
+		width: 250px;
+		height: 250px;
+		border-radius: 50%;
+		overflow: hidden;
+	}
+	.is-rounded-img {
+		width: inherit;
+		height: inherit;
+		border-radius: inherit;
+		
+		object-fit: cover;
+		object-position: center;
+	}
