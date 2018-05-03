@@ -399,6 +399,11 @@ export default class CoopDetail extends React.Component {
                                         <Link className="button is-link EditButton" to={"/Coop/Invite/"+this.state.coopId}>Invite</Link>
                                     </div>
                                 </div>
+                                    <div className="level">
+                                        <div className="level-item">
+                                            <Link className="button is-link EditButton" to={"/Coop/Chat/" + this.state.coopId}>ChatRoom</Link>
+                                        </div>
+                                    </div>
                                 <div className="columns is-multiline">
                                     <div className="column is-12">
                                         {this.coopMembersInfo()}

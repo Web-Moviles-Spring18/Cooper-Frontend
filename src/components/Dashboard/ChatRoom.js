@@ -1,24 +1,19 @@
-import React, { Component } from 'react';
-import Message from './Message';
+import React, { Component } from "react";
 
-class ChatRoom extends Component {
+import Menu from "../Menu";
+import SideMenu from "./SideMenu";
+import url from "../../url";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import Message from "./Message";
+
+class Member extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            messages: [
-                /*{
-                    id: 0,
-                    message: "Hello John!",
-                    author: "Lisa Ren",
-                    time: "March 31st, 18:27"
-                },
-                {
-                    id: 1,
-                    message: "What's up Lisa, just doing some homework",
-                    author: "John Cook",
-                    time: "March 31st, 18:29"
-                }*/
-            ],
+            // userName: this.props.userName,
+            // coopId: this.props.coopId,
+            messages: [],
             currentText: ""
         }
         this.eachMessage = this.eachMessage.bind(this);
@@ -26,7 +21,7 @@ class ChatRoom extends Component {
     }
 
     componentDidMount() {
-        firebase.database().ref('messages/').on('value', snap => {
+        firebase.database().ref(`${this.props.coopId}/`).on('value', snap => {
             const currentMessages = snap.val();
             if(currentMessages !== null) {
                 this.setState ({
@@ -44,7 +39,7 @@ class ChatRoom extends Component {
             author: author,
             time: timeStamp
         };
-        window.firebase.database().ref(`messages/${newMessage.id}`)
+        window.firebase.database().ref(`${this.props.coopId}/${newMessage.id}`)
             .set(newMessage);
         /*this.setState(prevState => ({
             messages: [
@@ -100,11 +95,18 @@ class ChatRoom extends Component {
                                     placeholder="Type your message." onChange={this.update.bind(this)}/>
                             </p>
                             <p className="control">
-                                <a className="button is-info" onClick={this.add.bind(this, this.state.currentText, "John Cook")}>
+                                <a className="button is-info" onClick={this.add.bind(this, this.state.currentText, this.props.userName)}>
                                     <span className="icon"><i className="fas fa-paper-plane"></i></span>
                                 </a>
                             </p>
                         </div>
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <div className="level">
+                    <div className="level-item">
+                        <Link className="button is-link EditButton" to={"/Coop/List/" + this.props.coopId}>Return to Coop Details</Link>
                     </div>
                 </div>
             </div>
@@ -112,4 +114,43 @@ class ChatRoom extends Component {
     }
 }
 
-export default ChatRoom;
+export default class Main extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            coopId: this.props.match.params.coopId,
+            userName: ""
+        }
+    }
+
+    componentWillMount() {
+
+        axios.get(url.url + "/pool/" + this.state.coopId, { withCredentials: true })
+            .then(res => {
+                this.setState({ coopData: res.data.pool, coopMembers: res.data.participants })
+            })
+        axios.get(url.url + "/account/", { withCredentials: true })
+            .then(res => {
+                let resultName = res.data.name == undefined ? res.data.email : res.data.name;
+                this.setState({ userName: resultName })
+            })
+    }
+
+    render() {
+        return (
+            <div>
+                <Menu types="app" /><br />
+                <div className="section">
+                    <div className="columns">
+                        <aside className="column is-2">
+                            <SideMenu option="invite" />
+                        </aside>
+                        <main className="column">
+                            <Member coopId={this.state.coopId} userName={this.state.userName}/>
+                        </main>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}
