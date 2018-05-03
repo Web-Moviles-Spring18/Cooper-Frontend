@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 import Menu from "./Menu";
 import axios from "axios";
+import url from "../url";
 
 
 export default class Login extends Component {
@@ -22,7 +23,7 @@ export default class Login extends Component {
         let config = {
             "Content-Type" : "application/json"
         }
-        axios.post("http://localhost:3000/login", data, config)
+        axios.post(url.url + "/login", data, config)
             .then(res => {
                 alert(res.data);
             })
