@@ -1,6 +1,6 @@
 
 export default { 
 
-    url : "http://10.0.0.11:3000"
+    url : "http://192.168.1.77:3000"
 
 }

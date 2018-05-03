@@ -19,6 +19,14 @@ export default class JoinToPool extends React.Component {
         }
     }
     componentWillMount() {
+        axios.get(url.url+"/account", { withCredentials: true })
+          .then(res => {})
+          .catch(err => {
+              if(err.response.status == 401) {
+                  window.location.replace("/Unauthorized");
+              }
+          }) 
+          
         axios.get(url.url + "/profile/pools/invites", {withCredentials:true})
             .then(res => {
                 this.setState({coopsToJoin:res.data});
@@ -52,7 +60,7 @@ export default class JoinToPool extends React.Component {
                           {"name":"Clean Code", "imageUrl":"https://placehold.it/1280x720", "total":680, "members":12}];
         return this.state.coopsSearch.map(coop => 
             <div className="column is-6">
-                <CoopCard type="join" coopId={coop._id} name={coop.name} imageURL={coop.picture} total={coop.total} payment={coop.paymentMethod}/>
+                <CoopCard type="joinPublic" coopId={coop._id} invite={coop.invite} name={coop.name} imageURL={coop.picture} total={coop.total} payment={coop.paymentMethod}/>
             </div>
             
         );

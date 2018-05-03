@@ -129,6 +129,11 @@ export default class CoopDetail extends React.Component {
             .then(res => {
                 this.setState({userId:res.data._id})
             })
+            .catch(err => {
+                if(err.response.status == 401) {
+                    window.location.replace("/Unauthorized");
+                }
+            })
 
         axios.get(url.url+"/profile/own/pools", {withCredentials:true})
             .then(res => {
@@ -401,7 +406,7 @@ export default class CoopDetail extends React.Component {
                                 </div>
                                     <div className="level">
                                         <div className="level-item">
-                                            <Link className="button is-link EditButton" to={"/Coop/Chat/" + this.state.coopId}>ChatRoom</Link>
+                                            <Link className="button is-link EditButton" to={"/Coop/Chat/" + this.state.coopId}>Chat Room</Link>
                                         </div>
                                     </div>
                                 <div className="columns is-multiline">

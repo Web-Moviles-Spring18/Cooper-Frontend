@@ -17,14 +17,17 @@ export default class ListCoop extends React.Component {
     }
 
     componentWillMount() {
+        
         var config = {  withCredentials: true };
         axios.get(url.url+"/profile/pools", config)
             .then(res => {
                 this.setState({coops : res.data});
                 console.log(JSON.stringify(res.data));
             })
-            .catch(error => {
-                console.log(error);
+            .catch(err => {
+                if(err.response.status == 401) {
+                    window.location.replace("/Unauthorized");
+                }
             })
 
         axios.get(url.url+"/profile/own/pools", config)

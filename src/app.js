@@ -10,12 +10,14 @@ import SignUp from './components/Signup';
 import Dashboard from "./components/Dashboard/Main";
 import InviteToPool from "./components/Dashboard/InviteToPool";
 import ListPools from "./components/Dashboard/ListPools";
+import AccountProfile from "./components/Dashboard/AccountProfile";
+import AccountPassword from "./components/Dashboard/AccountPassword";
 import JoinToPool from "./components/Dashboard/JointToPool";
 import CreatePool from "./components/Dashboard/CreatePool";
 import EditPoolDetail from "./components/Dashboard/EditPoolDetail.js";
 import ChatRoom from "./components/Dashboard/ChatRoom.js";
 import CoopDetail from './components/Dashboard/CoopDetail';
-
+import Unauthorized from "./components/Unauthorized";
 class App extends Component {
     //<!--<Route exact path="/ChatRoom" component={ ChatRoomPage } />--> <Provider store={store} >
     render() {
@@ -33,6 +35,9 @@ class App extends Component {
                     <Route exact path="/Coop/Join" component={ JoinToPool } />
                     <Route exact path="/Coop/Edit" component={ EditPoolDetail } />
                     <Route exact path="/Coop/Invite/:coopId" component={ InviteToPool } />
+                    <Route exact path="/Account/Profile" component={ AccountProfile } />
+                    <Route exact path="/Account/Password" component={ AccountPassword } />
+                    <Route exact path="/Unauthorized" component={ Unauthorized } />
                 </Switch>
            
         )

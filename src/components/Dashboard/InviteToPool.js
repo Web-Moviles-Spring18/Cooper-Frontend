@@ -55,7 +55,16 @@ export default class Main extends Component{
         }
     }
 
+    
     componentWillMount() {
+ 
+        axios.get(url.url+"/account", { withCredentials: true })
+          .then(res => {})
+          .catch(err => {
+              if(err.response.status == 401) {
+                  window.location.replace("/Unauthorized");
+              }
+          }) 
 
         axios.get(url.url+"/pool/"+this.state.coopId, {withCredentials:true})
             .then(res => {

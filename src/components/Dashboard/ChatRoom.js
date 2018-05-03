@@ -11,13 +11,23 @@ class Member extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            //coopId : this.props.match.params.coopId,
             // userName: this.props.userName,
             // coopId: this.props.coopId,
             messages: [],
-            currentText: ""
+            currentText: "",
+            coopName : ""
         }
         this.eachMessage = this.eachMessage.bind(this);
         this.add = this.add.bind(this);
+    }
+
+    componentWillMount() {
+        axios.get(url.url+"/pool/"+this.props.coopId, {withCredentials:true})
+            .then(res => {
+                console.log(res.data)
+                this.setState({coopName:res.data.pool.name})
+            })
     }
 
     componentDidMount() {
@@ -69,11 +79,12 @@ class Member extends React.Component {
 
     render() {
         return (
-            <div>
-                <section id="chat-title" className="hero is-dark">
+            <div className="column is-10">
+                <section id="chat-title" className="hero is-primary is-outlined">
                     <div className="hero-body">
                         <div className="container">
-                            <h1 className="title">ChatRoom</h1>
+                            <h1 className="title">{this.state.coopName}</h1>
+                            <h1 className="title">Chat Room</h1>
                             <h2 className="subtitle">This is the Coop chat to talk to all members!</h2>
                         </div>
                     </div>

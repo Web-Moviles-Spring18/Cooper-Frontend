@@ -32,10 +32,10 @@ export default class Login extends Component {
         axios.post(url.url + "/login", data, config)
             .then(res => {
                 alert(res.data);
-                this.props.history.push("/app");
+                this.props.history.push("/Coop/List");
             })
             .catch(error => {
-                alert(error);
+                alert("There were an error, try later!");
             })
     }
 
@@ -59,7 +59,9 @@ export default class Login extends Component {
                         <h3 className="title has-text-grey">Sign In</h3>
                         <p className="subtitle has-text-grey">Please login to proceed.</p>
                         <div className="columns">
-                            <div className="column is-half">
+                            <div className="column is-one-third">
+                            </div>
+                            <div className="column is-one-third">
                                 <div className="box">
                                     <div className="field">
                                         <div className="control">
@@ -80,19 +82,6 @@ export default class Login extends Component {
                                     </div>
                                     <button className="button is-block is-info is-large is-fullwidth" onClick={evt => this.login(evt)}>Login</button>
                                 </div>
-                            </div>
-                            <div className="column is-half">
-                                    <div className="field">
-                                        <button className="loginBtn loginBtn--facebook">
-                                            Login with Facebook
-                                        </button>                                        
-                                    </div>
-                                    <div className="field">
-                                        <button className="loginBtn loginBtn--google">
-                                            Login with Google
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        </button>
-                                    </div>
                             </div>
                             </div>
 
