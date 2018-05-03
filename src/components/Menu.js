@@ -17,6 +17,9 @@ export default class Menu extends Component {
         if (type == 'app') {
             return (
                 <div className="navbar-item title is-6" >
+                    <Link to="/Account" className={"navbar-item control " + (this.optionActive("account") ? "is-active" : "")}>
+                        Account
+                        </Link>
                     <Link to="/SignIn" className={"navbar-item control " + (this.optionActive("signin") ? "is-active" : "")}>
                         Options
                         </Link>
