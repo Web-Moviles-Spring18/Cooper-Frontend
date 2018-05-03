@@ -1,6 +1,6 @@
 
-export default { 
+export default {
 
-    url : "http://10.0.0.11:3000"
+    url : process.env.HOST || "http://10.0.0.11:3000"
 
 }
