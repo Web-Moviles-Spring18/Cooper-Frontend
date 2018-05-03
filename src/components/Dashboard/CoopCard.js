@@ -71,7 +71,7 @@ export default class CoopCard extends React.Component {
                             <b>{this.props.name}</b>
                         </div>
                         <div className="level-right">
-                            <b className="right">{this.props.owner ? "Owner" : "Member"}</b>
+                            <b className="right is-6">{this.props.owner ? "Owner" : "Member"}</b>
                         </div>
                     </div>
                 </p>
