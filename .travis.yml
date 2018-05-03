@@ -23,9 +23,6 @@ env:
 cache:
   directories:
   - node_modules
-before_install:
-- openssl aes-256-cbc -K $encrypted_7c1afc1ba21b_key -iv $encrypted_7c1afc1ba21b_iv
-  -in deploy.enc -out deploy -d
 install:
 - npm install
 before_script:
@@ -40,3 +37,6 @@ deploy:
     branch:
     - master
     - travis
+before_install:
+- openssl aes-256-cbc -K $encrypted_c48c777504c0_key -iv $encrypted_c48c777504c0_iv
+  -in deploy.enc -out deploy -d

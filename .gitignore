@@ -5,3 +5,4 @@ node_modules/*
 package-lock.json
 dist/
 dist/bundle.js
+deploy
