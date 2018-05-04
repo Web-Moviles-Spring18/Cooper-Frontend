@@ -12,7 +12,7 @@ module.exports = {
               test: /\.(js|jsx)$/,
               exclude: /node_modules/,
               use: ['babel-loader']
-            }, 
+            },
             {
               test: /\.css$/,
               use: ['style-loader', 'css-loader']
@@ -35,8 +35,8 @@ module.exports = {
 
     disableHostCheck: true,   // That solved it
       contentBase: './dist',
-      hot: true, 
-      port: 8080,
+      hot: true,
+      port: process.env.PORT || 8080,
       historyApiFallback: {
         index: '/'
       }

@@ -1,6 +1,4 @@
 
-export default { 
-
-    url : "https://cooperapp.me"
-
+export default {
+    url : process.env.HOST || "https://cooperapp.me"
 }
