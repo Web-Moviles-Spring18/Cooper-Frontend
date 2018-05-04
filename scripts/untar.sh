@@ -8,4 +8,5 @@ export NVM_BIN=$HOME/.nvm/versions/node/v6.9.0/bin
 
 cd $1 && \
 tar zxvf package.tgz -C . && \
-mv dist/package.json .
+mv dist/package.json . && \
+cp dist/webpack.config.js .
