@@ -34,6 +34,15 @@ export default class Login extends Component {
             }*/
         }
         console.log(data);
+
+        axios.post(url.url+"/signup", data, config)
+            .then(res => {
+                alert(res.data);
+                this.props.history.push("/Coop/List");
+            })
+            .catch(error => {
+                alert(error.response.data);
+            })
     }
 
     updateSignUpEmail(evt) {

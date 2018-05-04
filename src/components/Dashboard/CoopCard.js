@@ -20,20 +20,44 @@ export default class CoopCard extends React.Component {
                 window.location.replace("/Coop/List/"+this.state.coopId)
                 //this.props.history.push("/Coop/List/"+this.state.coopId);
             })
+            .catch(err => {
+                alert(err.response.data);
+            })
+    }
+
+    joinPublicPool() {
+        axios.get(url.url+"/join/"+this.props.invite, {withCredentials:true})
+            .then(res => {
+                alert(res.data);
+                window.location.replace("/Coop/List");
+                //window.location.replace("/Coop/List/"+this.state.coopId)
+                //this.props.history.push("/Coop/List/"+this.state.coopId);
+            })
+            .catch(err => {
+                alert(err.response.data);
+            })
+        
     }
 
     handleSubmit() {
-        if(this.props.type != "join") {
-            return (
-                <Link to={"/Coop/List/"+this.state.coopId} className="button is-success is-fullwidth">
-                    See
-                </Link>
-            );
-        } else {
+        if(this.props.type == "join") {
             return (
                 <a onClick={evt => this.joinPool()} className="button is-success is-fullwidth">
                     Join
                 </a>
+            );
+        } else if(this.props.type == "joinPublic") {
+            return (
+                <a onClick={evt => this.joinPublicPool()} className="button is-success is-fullwidth">
+                    Join
+                </a>
+            );
+            
+        } else {
+            return (
+                <Link to={"/Coop/List/"+this.state.coopId} className="button is-success is-fullwidth">
+                    See
+                </Link>
             );
         }
     }
@@ -47,7 +71,7 @@ export default class CoopCard extends React.Component {
                             <b>{this.props.name}</b>
                         </div>
                         <div className="level-right">
-                            <b className="right">{this.props.owner ? "Owner" : "Member"}</b>
+                            <b className="right is-6">{this.props.owner ? "Owner" : "Member"}</b>
                         </div>
                     </div>
                 </p>

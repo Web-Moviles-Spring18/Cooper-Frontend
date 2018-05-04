@@ -4,7 +4,7 @@
   "description": "CliendSide App for Cooper",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config ./webpack.config.js --mode production",
+    "start": "webpack-dev-server --host 0.0.0.0 --port 8080 --hot --inline",
     "dev": "webpack-dev-server --config ./webpack.config.js --mode development",
     "build": "webpack -d",
     "webpack": "webpack -wd",

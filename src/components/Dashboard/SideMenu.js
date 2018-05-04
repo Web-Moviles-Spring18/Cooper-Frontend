@@ -54,9 +54,14 @@ export default class SideMenu extends Component {
                     <a className="">Profile</a>
                     <ul>
                         <li>
-                            <a><i className="fas fa-edit"></i>
+                            <Link to="/Account/Profile" className={this.props.option == 'edit' ? "is-active" : ""}><i className="fas fa-edit"></i>
                                 &nbsp;Edit
-                            </a>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/Account/Password" className={this.props.option == 'editPassword' ? "is-active" : ""}><i className="fas fa-lock"></i>
+                                &nbsp;Change
+                            </Link>
                         </li>
                         <li>
                             <a onClick={evt => this.logout(evt)}><i className="fas fa-sign-in-alt"></i>

@@ -135,6 +135,17 @@ export default class CreatePool extends React.Component {
         reader.readAsDataURL(file);
     }
 
+    
+    componentWillMount() {
+        axios.get(url.url+"/account", { withCredentials: true })
+          .then(res => {})
+          .catch(err => {
+              if(err.response.status == 401) {
+                  window.location.replace("/Unauthorized");
+              }
+          })
+    }
+
     render() {
         return (
             <div>

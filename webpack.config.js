@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require("path");
 module.exports = {
     entry: [
+      'webpack-dev-server/client?https://0.0.0.0:8080',
         'react-hot-loader/patch',
         './src/app.js'
     ],
@@ -30,10 +31,9 @@ module.exports = {
       new webpack.HotModuleReplacementPlugin()
     ],
     devServer: {
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Credentials": "true"
-      },
+      compress: true,
+
+    disableHostCheck: true,   // That solved it
       contentBase: './dist',
       hot: true,
       port: process.env.PORT || 8080,

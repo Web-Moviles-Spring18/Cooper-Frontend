@@ -119,6 +119,17 @@ export default class CoopDetail extends React.Component {
         this.handleEndDateChange = this.handleEndDateChange.bind(this);
     }
 
+    detelePool() {
+        axios.delete(url.url+"/pool/"+this.state.coopId, {withCredentials:true})
+            .then(res => {
+                alert(res.data);
+                window.location.replace("/Coop/List");
+            })
+            .catch(err => {
+                alert(err.response.data);
+            })
+    }
+
     componentWillMount() {
         axios.get(url.url+"/pool/"+this.state.coopId, {withCredentials:true})
             .then(res => {
@@ -128,6 +139,11 @@ export default class CoopDetail extends React.Component {
         axios.get(url.url+"/account/", {withCredentials:true})
             .then(res => {
                 this.setState({userId:res.data._id})
+            })
+            .catch(err => {
+                if(err.response.status == 401) {
+                    window.location.replace("/Unauthorized");
+                }
             })
 
         axios.get(url.url+"/profile/own/pools", {withCredentials:true})
@@ -397,6 +413,16 @@ export default class CoopDetail extends React.Component {
                                 <div className="level">
                                     <div className="level-item">
                                         <Link className="button is-link EditButton" to={"/Coop/Invite/"+this.state.coopId}>Invite</Link>
+                                    </div>
+                                </div>
+                                <div className="level">
+                                    <div className="level-item">
+                                        <Link className="button is-link EditButton" to={"/Coop/Chat/" + this.state.coopId}>Chat Room</Link>
+                                    </div>
+                                </div>
+                                <div className="level">
+                                    <div className="level-item">
+                                        <button onClick={evt => this.detelePool()} className="button is-danger EditButton">Delete Pool</button>
                                     </div>
                                 </div>
                                 <div className="columns is-multiline">
