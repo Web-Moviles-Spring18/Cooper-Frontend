@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require("path");
 module.exports = {
     entry: [
+      'webpack-dev-server/client?https://0.0.0.0:8080',
         'react-hot-loader/patch',
         './src/app.js'
     ],
@@ -11,7 +12,7 @@ module.exports = {
               test: /\.(js|jsx)$/,
               exclude: /node_modules/,
               use: ['babel-loader']
-            }, 
+            },
             {
               test: /\.css$/,
               use: ['style-loader', 'css-loader']
@@ -30,13 +31,12 @@ module.exports = {
       new webpack.HotModuleReplacementPlugin()
     ],
     devServer: {
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Credentials": "true"
-      },
+      compress: true,
+
+    disableHostCheck: true,   // That solved it
       contentBase: './dist',
-      hot: true, 
-      port: 8080,
+      hot: true,
+      port: process.env.PORT || 8080,
       historyApiFallback: {
         index: '/'
       }

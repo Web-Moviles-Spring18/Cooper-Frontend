@@ -41,15 +41,19 @@ class Member extends React.Component {
         })
     }
 
-    add(text, author) {
+    add(text, data) {
         let timeStamp = new Date().toLocaleString();
         const newMessage = {
-            id: this.state.messages.length,
             message: text,
-            author: author,
+            authorName: this.props.userName,
+            authorEmail: this.props.userEmail,
+            userid: this.props.userId,
             time: timeStamp
         };
-        window.firebase.database().ref(`${this.props.coopId}/${newMessage.id}`)
+        let newPostRef = window.firebase.database().ref(`${this.props.coopId}/`)
+            .push(newMessage);
+        newMessage.id = newPostRef.key;
+        window.firebase.database().ref(`${this.props.coopId}/${newPostRef.key}`)
             .set(newMessage);
         /*this.setState(prevState => ({
             messages: [
@@ -71,7 +75,7 @@ class Member extends React.Component {
 
     eachMessage(message, i) {
         return (
-            <Message key={i} index={i} author={message.author} time={message.time}>
+            <Message key={i} index={i} author={message.authorName} time={message.time}>
                 {message.message}
             </Message>
         );
@@ -93,7 +97,7 @@ class Member extends React.Component {
                 <br/>
                 <div className="level">
                     <div id="chat-messages" className="container">
-                        {this.state.messages.map(this.eachMessage)}
+                        { Object.values(this.state.messages).map(this.eachMessage) }
                     </div>
                 </div>
 
@@ -106,7 +110,7 @@ class Member extends React.Component {
                                     placeholder="Type your message." onChange={this.update.bind(this)}/>
                             </p>
                             <p className="control">
-                                <a className="button is-info" onClick={this.add.bind(this, this.state.currentText, this.props.userName)}>
+                                <a className="button is-info" onClick={this.add.bind(this, this.state.currentText)}>
                                     <span className="icon"><i className="fas fa-paper-plane"></i></span>
                                 </a>
                             </p>
@@ -142,8 +146,9 @@ export default class Main extends Component {
             })
         axios.get(url.url + "/account/", { withCredentials: true })
             .then(res => {
+                console.log(res.data);
                 let resultName = res.data.name == undefined ? res.data.email : res.data.name;
-                this.setState({ userName: resultName })
+                this.setState({ userName: resultName, userEmail: res.data.email, userId: res.data._id });
             })
     }
 
@@ -157,7 +162,7 @@ export default class Main extends Component {
                             <SideMenu option="invite" />
                         </aside>
                         <main className="column">
-                            <Member coopId={this.state.coopId} userName={this.state.userName}/>
+                            <Member coopId={this.state.coopId} userName={this.state.userName} userEmail={this.state.userEmail} userId={this.state.userId}/>
                         </main>
                     </div>
                 </div>
