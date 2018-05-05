@@ -17,14 +17,24 @@ export default class AccountProfile extends Component {
   }
 
   componentWillMount() {
-    axios.get(url.url+"/account", { withCredentials: true })
-      .then(res => {})
-      .catch(err => {
-          if(err.response.status == 401) {
-              window.location.replace("/Unauthorized");
-          }
-      })
-}
+        axios.get(url.url+"/account", { withCredentials: true })
+        .then(res => {})
+        .catch(err => {
+            if(err.response.status == 401) {
+                window.location.replace("/Unauthorized");
+            }
+        })
+    }
+
+   deleteAccount() {
+       axios.get(url.url+"/account/delete", {withCredentials:true})
+        .then(res => {
+            window.location.replace("/");
+        })
+        .catch(error => {
+            alert(error.response.data);
+        })
+   }
 
   sendNewData() {
 
@@ -79,15 +89,32 @@ export default class AccountProfile extends Component {
                                             <input  name="gender" placeholder="Your gender ... [Male, Female, Undefined]" className="input" type="text" onChange={evt => this.setState({gender:evt.target.value})} value={this.state.gender}></input>
                                             </p>
                                         </div>
-                                        <div className="field">
-                                            <div className="control">
-                                            <p className="control">
-                                                <button type="submit" className="button is-primary update-button" onClick={evt => this.sendNewData()}>
-                                                UPDATE
-                                                </button>
-                                            </p>
+                                        <div className="columns">
+                                            <div className="column">
+                                                <div className="field">
+                                                    <div className="control">
+                                                    <p className="control">
+                                                        <button type="submit" className="button is-primary update-button" onClick={evt => this.sendNewData()}>
+                                                        UPDATE
+                                                        </button>
+                                                    </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="column">
+                                                <div className="field">
+                                                    <div className="control">
+                                                    <p className="control">
+                                                        <button type="submit" className="button is-danger update-button" onClick={evt => this.deleteAccount()}>
+                                                        Delete Account
+                                                        </button>
+                                                    </p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
+                                        
+                                        
                                     </div>
                                     </div>
                                 </div>

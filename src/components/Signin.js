@@ -35,7 +35,7 @@ export default class Login extends Component {
                 this.props.history.push("/Coop/List");
             })
             .catch(error => {
-                alert("There were an error, try later!");
+                alert(error.response.data);
             })
     }
 
