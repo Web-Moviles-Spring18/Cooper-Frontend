@@ -46,7 +46,9 @@ class Member extends React.Component {
         const newMessage = {
             id: this.state.messages.length,
             message: text,
-            author: author,
+            authorName: author,
+            authorEmail: this.props.userEmail,
+            userid: this.props.userId,
             time: timeStamp
         };
         window.firebase.database().ref(`${this.props.coopId}/${newMessage.id}`)
@@ -143,7 +145,7 @@ export default class Main extends Component {
         axios.get(url.url + "/account/", { withCredentials: true })
             .then(res => {
                 let resultName = res.data.name == undefined ? res.data.email : res.data.name;
-                this.setState({ userName: resultName })
+                this.setState({ userName: resultName, userEmail: res.data.email, userId: res.data._id });
             })
     }
 
@@ -157,7 +159,7 @@ export default class Main extends Component {
                             <SideMenu option="invite" />
                         </aside>
                         <main className="column">
-                            <Member coopId={this.state.coopId} userName={this.state.userName}/>
+                            <Member coopId={this.state.coopId} userName={this.state.userName} userEmail={this.state.userEmail} userId={this.state.userId}/>
                         </main>
                     </div>
                 </div>
